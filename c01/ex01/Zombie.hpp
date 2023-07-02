@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 15:00:13 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/02 17:24:15 by renstein         ###   ########.fr       */
+/*   Created: 2023/07/02 17:39:20 by renstein          #+#    #+#             */
+/*   Updated: 2023/07/02 17:40:33 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ class Zombie
     void announce(void);
 };
 
-
-void randomChump( std::string name );
-Zombie* newZombie( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

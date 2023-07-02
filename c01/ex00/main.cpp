@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 14:56:25 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/01 15:26:54 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/02 17:27:57 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int main()
 {
-	Zombie	z;
+	Zombie	z("ty");
 	z.announce();
+	randomChump("foo");
+	Zombie *v = newZombie("grey");
+	v->announce();
+	delete v;
 }
