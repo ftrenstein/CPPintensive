@@ -6,13 +6,14 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:33:35 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/02 17:40:04 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/02 19:04:18 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 int main()
 {
-    
+    Zombie *v = zombieHorde(100, "Bil");
+    delete[] v;
 }
