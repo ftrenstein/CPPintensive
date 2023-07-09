@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:00:13 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/08 20:00:31 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/09 17:16:06 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,21 @@
 
 #include <iostream>
 #include "contact.hpp"
+#include <iomanip>
 
 class Contact;
 
 class PhoneBook
 {
-    public:
     Contact  con[8];
+    int count;
+
+    public:
+    void    set_contact();
+    void	ft_print();
+
+    PhoneBook();
+
 };
 
 #endif

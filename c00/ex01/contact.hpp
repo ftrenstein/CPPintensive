@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:52:52 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/08 19:15:05 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/09 16:37:10 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class PhoneBook;
 
