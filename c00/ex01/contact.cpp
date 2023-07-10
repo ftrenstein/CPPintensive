@@ -10,7 +10,7 @@
 */
 
 bool Contact::setField(std::string name, int id) {
-    if (id == 0)
+    if (id == 0 && name[0])
         first_name = name;
     if (id == 1)
         last_name = name;
@@ -29,6 +29,8 @@ bool Contact::setField(std::string name, int id) {
     }
     if (id == 4)
         darksecret = name;
+    else
+        return(false);
     return(true);
 }
 

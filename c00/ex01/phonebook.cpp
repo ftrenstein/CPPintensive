@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:32:58 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/09 18:10:28 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/10 18:09:47 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,28 @@ void	PhoneBook::ft_print()
 {
 	int index = 0;
 	std::cout << " | " << "      Index" << "|";
-	std::cout << std::setw(10) << "First name" << "|";
-	std::cout << std::setw(10) << " Last name" << "|";
-	std::cout << std::setw(10) << " Telephone" << "|\n";
+	std::cout << std::setw(10) << "  First name" << "|";
+	std::cout << std::setw(10) << "   Last name" << "|";
+	std::cout << std::setw(10) << "   Telephone" << "|\n";
 
-	std::cout << " --------------------------------------------------------------" << std::endl;
-	for (int j = 0; j <= (count - 1); j++)
+	std::cout << " _____________________________________________________" << std::endl;
+	for (int j = 0; j <= count; j++)
 	{
 		std::cout << " | " << std::setw(10) <<  j << " | " << std::setw(10) << con[j].getField(0).substr(0,9) << " | " << std::setw(10) << con[j].getField(1).substr(0,9) << " | " \
-					<< std::setw(10) << con[j].getField(2).substr(0,9) << " | " << std::setw(10) << con[j].getField(3).substr(0,9) << " | "<< std::endl;
+					<< std::setw(10) << con[j].getField(2).substr(0,9) << " | " << std::endl;
 	}
-	std::cout << " --------------------------------------------------------------" << std::endl;
+
 	std::cout << "Print index contact for searching:" << std::endl;
 	std::cin >> index;
-	for (int j = 0; j <= (count - 1); j++)
+	for (int j = 0; j <= count; j++)
 	{
-		if (j == index)
+		if (isdigit(index) && j == index && index <= count)
 		{
 			std::cout << " | " << j << " | " << con[j].getField(0) << " | " << con[j].getField(1) << " | " \
 						<< con[j].getField(2) << " | " << con[j].getField(3) << " | "<< std::endl;
 		}
+		else
+			break;
 	}
 
 }
