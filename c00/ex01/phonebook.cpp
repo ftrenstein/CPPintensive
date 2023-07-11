@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 18:32:58 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/10 18:09:47 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:51:07 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,27 @@ PhoneBook::PhoneBook()
 	count = 0;
 }
 
+PhoneBook::~PhoneBook()
+{
+}
+
 void printprompt(int id)
 {
     if (id == 0)
-        std::cout << "Hello, my dear friend! Print your first name here:" << std::endl;
+        std::cout << "Print your first name here: ";
     if (id == 1)
-        std::cout << "Last name:" << std::endl;
+        std::cout << "Last name: ";
     if (id == 2)
-        std::cout << "Nickname:" << std::endl;
+        std::cout << "Nickname: ";
     if (id == 3)
-        std::cout << "telephone number (only digits!):" << std::endl;
+        std::cout << "telephone number (only digits!): ";
     if (id == 4)
-        std::cout << "say your top secret:" << std::endl;
+        std::cout << "say your top secret: ";
 }
 
 void	PhoneBook::ft_print()
 {
-	int index = 0;
+
 	std::cout << " | " << "      Index" << "|";
 	std::cout << std::setw(10) << "  First name" << "|";
 	std::cout << std::setw(10) << "   Last name" << "|";
@@ -50,11 +54,18 @@ void	PhoneBook::ft_print()
 					<< std::setw(10) << con[j].getField(2).substr(0,9) << " | " << std::endl;
 	}
 
+
 	std::cout << "Print index contact for searching:" << std::endl;
-	std::cin >> index;
+//tut stop
+	int index;
+	if (!getline(std::cin, index))
+	{
+		std::cout << "wrong index" << std::endl;
+	}
+
 	for (int j = 0; j <= count; j++)
 	{
-		if (isdigit(index) && j == index && index <= count)
+		if ( && j == index && index <= count)
 		{
 			std::cout << " | " << j << " | " << con[j].getField(0) << " | " << con[j].getField(1) << " | " \
 						<< con[j].getField(2) << " | " << con[j].getField(3) << " | "<< std::endl;
@@ -65,43 +76,47 @@ void	PhoneBook::ft_print()
 
 }
 
-
 void PhoneBook::set_contact()
 {
 	std::string name;
+
 	for (int i = 0; i < 5; i++)
 	{
 		printprompt(i);
-		std::cin >> name;
-		if (!con[count].setField(name, i))
+		if (!std::getline(std::cin, name))
+			break;
+		if(name.empty())
+			i--;
+		else if (!con[count].setField(name, i))
 			i--;
 	}
 	count++;
-	if (count > 8)
+	if (count == 9)
 		count = 0;
 }
 
 int main()
 {
 	PhoneBook pb;
-
-	std::cout << "print ADD or SEARCH or EXIT" << std::endl;
-
 	std::string choisir;
-	while (1)
+
+	std::cout << HALLO << std::endl;
+	while (std::getline(std::cin, choisir))
 	{
-		std ::cin >> choisir;
 		if (choisir == "ADD")
 		{
 			pb.set_contact();
+			std::cout << HALLO << std::endl;
 		}
 		else if (choisir == "SEARCH")
 		{
 			pb.ft_print();
+			std::cout << HALLO << std::endl;
 		}
 		else if (choisir == "EXIT")
-			exit(0);
-		// else
-		// 	return(0);
+			return 0;
+		else
+			std::cout << "Wrong command\n";
 	}
+	return 0;
 }
