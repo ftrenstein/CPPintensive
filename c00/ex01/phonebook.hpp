@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:00:13 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/11 17:30:00 by renstein         ###   ########.fr       */
+/*   Updated: 2023/07/12 12:52:59 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#define HALLO "Print ADD or SEARCH or EXIT"
+#define HELLO "Print ADD or SEARCH or EXIT"
 #include <iostream>
 #include "contact.hpp"
 #include <iomanip>
+#include <stdlib.h>
 
 class Contact;
 

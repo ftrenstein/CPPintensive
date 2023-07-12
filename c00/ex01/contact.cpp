@@ -51,7 +51,7 @@ std::string Contact::getField(int id)
     else if (id == 2)
         return(nick);
     else if (id == 3)
-        return(phone_num);;
+        return(phone_num);
     else if (id == 4)
         return(darksecret);
     else
