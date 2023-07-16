@@ -1,6 +1,4 @@
-NAME = Zombie
-
-HEADER = zombie.hpp
+NAME = Weapon
 
 LIST = $(shell find . -name "*.cpp")
 

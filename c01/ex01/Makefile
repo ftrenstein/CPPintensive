@@ -11,10 +11,10 @@ OBJ = $(LIST:.cpp=.o)
 all : $(NAME)
 
 %.o : %.cpp $(HEADER)
-	clang++ -g $(FLAGS) -c $< -o $@
+	c++ -g $(FLAGS) -c $< -o $@
 
 ${NAME} : $(OBJ)
-	clang++ $(FLAGS) $(OBJ) -o $(NAME)
+	c++ $(FLAGS) $(OBJ) -o $(NAME)
 
 clean :
 	$(RM) $(OBJ)
