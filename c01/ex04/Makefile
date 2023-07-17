@@ -1,4 +1,4 @@
-NAME = Weapon
+NAME = losers
 
 LIST = $(shell find . -name "*.cpp")
 
