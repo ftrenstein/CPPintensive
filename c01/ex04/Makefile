@@ -2,7 +2,7 @@ NAME = losers
 
 LIST = $(shell find . -name "*.cpp")
 
-HEADER = HumanA.hpp HumanB.hpp Weapon.hpp
+HEADER = Main.hpp
 
 FLAGS = -Wall -Wextra -Werror
 
