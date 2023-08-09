@@ -1,4 +1,4 @@
-NAME = losers
+NAME = loser
 
 LIST = $(shell find . -name "*.cpp")
 
@@ -10,7 +10,7 @@ OBJ = $(LIST:.cpp=.o)
 
 all : $(NAME)
 
-%.o : %.cpp 
+%.o : %.cpp
 	c++ -g $(FLAGS) -c $< -o $@
 
 ${NAME} : $(OBJ)
