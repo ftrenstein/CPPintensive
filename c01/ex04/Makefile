@@ -2,8 +2,6 @@ NAME = losers
 
 LIST = $(shell find . -name "*.cpp")
 
-HEADER = Main.hpp
-
 FLAGS = -Wall -Wextra -Werror
 
 OBJ = $(LIST:.cpp=.o)
@@ -12,7 +10,7 @@ OBJ = $(LIST:.cpp=.o)
 
 all : $(NAME)
 
-%.o : %.cpp $(HEADER)
+%.o : %.cpp 
 	c++ -g $(FLAGS) -c $< -o $@
 
 ${NAME} : $(OBJ)
