@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:39:20 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/02 18:46:35 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:36:41 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 class Zombie
 {
+private:
     std::string _name;
-
-    public:
+public:
     Zombie();
     Zombie(std::string name);
     ~Zombie();

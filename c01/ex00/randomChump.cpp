@@ -6,11 +6,11 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:56:13 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/02 17:15:26 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:27:47 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 void randomChump( std::string name )
 {

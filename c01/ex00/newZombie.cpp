@@ -6,11 +6,11 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:55:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/07/02 17:22:25 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:27:53 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie* newZombie( std::string name )
 {
