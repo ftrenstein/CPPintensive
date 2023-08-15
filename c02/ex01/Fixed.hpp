@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:07:41 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/14 19:44:11 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:50:20 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     Fixed(); //A default constructor that initializes the fixed-point number value to 0.
 
     Fixed(const Fixed &f); //A copy constructor
-    Fixed(const int value);
+    Fixed(const int v);
     Fixed(const float value);
     ~Fixed();//A destructor
 
@@ -35,9 +35,10 @@ public:
     float toFloat( void ) const;
     int toInt( void ) const;
 
-
     int getRawBits( void ) const;
     void setRawBits( int const raw);
 };
+
+    std::ostream & operator <<(std::ostream &, const Fixed &);
 
 #endif
