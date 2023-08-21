@@ -1,10 +1,10 @@
 NAME = Zombie
 
-HEADER = zombie.hpp
+HEADER = Zombie.hpp
 
 LIST = $(shell find . -name "*.cpp")
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJ = $(LIST:.cpp=.o)
 

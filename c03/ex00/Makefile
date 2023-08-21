@@ -1,18 +1,25 @@
-NAME = Harl
+NAME = Fixed
 
 LIST = $(shell find . -name "*.cpp")
 
-HEADER = -I .
+HEADER = Fixed.hpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJ = $(LIST:.cpp=.o)
+OBJSFD = temporary
+
+OBJ = $(addprefix $(OBJSFD)/,$(LIST:.cpp=.o))
+
+RM = rm -rf
 
 .PHONY : all clean fclean re
 
 all : $(NAME)
 
-%.o : %.cpp $(HEADER)
+$(OBJSFD) :
+	mkdir $@
+
+$(OBJSFD)/%.o : %.cpp | $(OBJSFD)
 	c++ -g $(FLAGS) -c $< -o $@
 
 ${NAME} : $(OBJ)
@@ -20,6 +27,7 @@ ${NAME} : $(OBJ)
 
 clean :
 	$(RM) $(OBJ)
+	$(RM) $(OBJSFD)
 
 fclean : clean
 	$(RM) $(NAME)

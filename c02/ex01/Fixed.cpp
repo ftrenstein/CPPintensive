@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:04:19 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/15 18:55:34 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:48:47 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,19 @@ Fixed::Fixed(const float value)
     this->n = roundf(value * pow(2,_fractional_bits));
 }
 
-Fixed::Fixed(const Fixed& f)
+Fixed::Fixed(const Fixed &f)
 {
     std::cout << "Copy constructor called " << std::endl;
     *this = f;
 }
 
-void Fixed::operator=(const Fixed &f)
+Fixed &Fixed::operator=(const Fixed& copy)
 {
     std::cout << "Copy assignment operator called "  << std::endl;
-    n = f.n;
+    if (this == &copy)
+        return *this;
+    n = copy.n;
+    return *this;
 }
 
 Fixed::~Fixed()

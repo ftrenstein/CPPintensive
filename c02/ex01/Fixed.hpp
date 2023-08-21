@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:07:41 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/15 18:50:20 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:47:09 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
     Fixed(const float value);
     ~Fixed();//A destructor
 
-    void operator=(const Fixed &f);// A copy assignment operator overload
+    Fixed& operator=(const Fixed &copy);// A copy assignment operator overload
     float toFloat( void ) const;
     int toInt( void ) const;
 

@@ -9,7 +9,7 @@ HEADER   := contact.hpp phonebook.hpp
 
 # Define all the compiling flags.
 CXX      := c++
-CXXFLAGS := -Wall -Werror -Wextra
+CXXFLAGS := -Wall -Werror -Wextra 
 
 # Compile and create everything.
 all: $(NAME)

@@ -1,5 +1,7 @@
 NAME = Zombie
 
+HEADER = Zombie.hpp
+
 LIST = $(shell find . -name "*.cpp")
 
 FLAGS = -Wall -Wextra -Werror
