@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 14:07:41 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/20 20:50:04 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/22 15:51:23 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     ~Fixed();
 
     Fixed& operator=(const Fixed &copy);// A copy assignment operator overload
-    
+
     bool operator>(const Fixed &f);
     bool operator<(const Fixed &f);
     bool operator>=(const Fixed &f);
