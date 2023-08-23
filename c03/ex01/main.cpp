@@ -12,6 +12,8 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int main()
 {
@@ -64,13 +66,56 @@ int main()
 	claptrap4.takeDamage(5);
 	claptrap4.beRepaired(20);
 	claptrap4.takeDamage(10);
-    // ClapTrap a("Harry");
-    // ClapTrap b("Voldemort");
+	std::cout << "--------------------------------\n";
 
-    // a.attack("Voldemort");
-    // a.attack("Voldemort");
+	ScavTrap	ScavTrap1("Valli");
+	ScavTrap	ScavTrap2("FAT");
+	ScavTrap	ScavTrap3("Boat");
+	ScavTrap	ScavTrap4(ScavTrap1);
 
-    // b.takeDamage(5);
-    // b.beRepaired(1);
+	ScavTrap3 = ScavTrap1;
+
+	std::cout << "number 3\n";
+	ScavTrap3.takeDamage(1000);
+
+	std::cout << "number 1\n";
+	ScavTrap1.attack("Red target");
+	ScavTrap1.attack("Red target");
+	ScavTrap1.attack("Red target");
+
+	std::cout << "number 3\n";
+	ScavTrap3.attack("Red target");
+	ScavTrap3.attack("Red target");
+	ScavTrap3.attack("Red target");
+
+	std::cout << "number 1\n";
+	ScavTrap1.takeDamage(5);
+	ScavTrap1.attack("Red target");
+	ScavTrap1.beRepaired(5);
+	ScavTrap1.attack("Red target");
+	ScavTrap1.takeDamage(20);
+	ScavTrap1.attack("Red target");
+	ScavTrap1.takeDamage(200);
+
+	std::cout << "number 2\n";
+	ScavTrap2.attack("Red target");
+	ScavTrap2.attack("Blue target");
+	ScavTrap2.attack("Green target");
+	ScavTrap2.attack("Red target");
+	ScavTrap2.attack("Blue target");
+	ScavTrap2.attack("Green target");
+	ScavTrap2.attack("Red target");
+	ScavTrap2.attack("Blue target");
+	ScavTrap2.attack("Green target");
+	ScavTrap2.attack("Red target");
+	ScavTrap2.attack("Blue target");	// No energy left from this point
+	ScavTrap2.takeDamage(10);
+	ScavTrap2.beRepaired(20);
+	ScavTrap2.takeDamage(10);
+	std::cout << "number 4\n";
+	ScavTrap4.attack("Blue target");	// No energy left from this point
+	ScavTrap4.takeDamage(5);
+	ScavTrap4.beRepaired(20);
+	ScavTrap4.takeDamage(10);
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/22 18:47:04 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:50:25 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ private:
 public:
     ClapTrap(); //A default constructor that initializes the fixed-point number value to 0.
     ClapTrap(const ClapTrap &f); //A copy constructor
-    ClapTrap(const int v);
-    ClapTrap(const float value);
     ~ClapTrap();
     ClapTrap(std::string name);
 
