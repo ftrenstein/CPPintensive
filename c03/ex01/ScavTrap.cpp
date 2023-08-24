@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:41:38 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/23 17:59:35 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/25 01:49:30 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 
 //______________________________________________________________
+
 ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "Created a new object with ScavTrap default constructor"  << std::endl;
 }
 
 
-ScavTrap::ScavTrap(const ScavTrap& copy) //: _name(copy._name), _hitpoint(copy._hitpoint), _energy(copy._energy), _damage(copy._damage)
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy)
 {
     std::cout << "Created with ScavTrap a new object named - " << _name <<" with copy constructor" << std::endl;
     *this = copy;
@@ -44,12 +45,12 @@ ScavTrap::~ScavTrap()
 }
 //__________________________________________________________________________
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name)  : ClapTrap(name)
 {
-    _hitpoint = 10;
-    _energy = 10;
-    _damage = 0;
-    _name = name;
+    _hitpoint = 100;
+    _energy = 50;
+    _damage = 20;
+
     std::cout << "Created a new ScavTrap with name \'" << this->_name << "\'" << std::endl;
     return ;
 }

@@ -2,7 +2,7 @@ NAME = ClapTrap
 
 LIST = $(shell find . -name "*.cpp")
 
-HEADER = ClapTrap.hpp
+HEADER = ClapTrap.hpp ScavTrap.hhp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

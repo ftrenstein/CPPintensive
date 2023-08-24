@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/23 18:04:53 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/25 01:48:34 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class ClapTrap
     protected:
         std::string _name;
 
-        unsigned int _hitpoint;
-        unsigned int _energy;
-        unsigned int _damage;
+        int _hitpoint;
+        int _energy;
+        int _damage;
 
 
     public:
@@ -37,6 +37,22 @@ class ClapTrap
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        
+        // void setName(std::string &name);
+        // std::string &getName();
+    
+        
+        // void setHitpoints(int hitpoints);
+        // int	&getHitpoints();
+
+        
+        // void setEnergyPoints(int energy);
+        // int	&getEnergyPoints();
+
+
+		// void	setAttackDamage(int AttackDamage);
+        // int		&getAttackDamage();
+
 };
 
 #endif
