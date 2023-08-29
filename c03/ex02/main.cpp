@@ -13,18 +13,18 @@
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
 
 
 int main()
 {
 
 	ScavTrap	S1("WALL-E");
-	ScavTrap	S2("EVA");
-	ScavTrap	S3("crockroach");
-	ScavTrap	S4(S1);
+	FragTrap	S2("fEVA");
+	FragTrap	S3("Fcrockroach");
+	FragTrap	S4;
 	ClapTrap	S5("mami");
-
-	S3 = S1;
 
 
 	S1.attack("stupid robots");
@@ -38,6 +38,8 @@ int main()
 	S5.attack("stupid robots");
 	S5.takeDamage(90);
 	S5.beRepaired(10);
+
+	S3.highFivesGuys();
 	// S5.guardGate(); //not possible
 
     return 0;
