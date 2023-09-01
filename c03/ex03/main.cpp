@@ -35,9 +35,9 @@ int main()
 	S6.attack("FAT");
 	S6.attack("stupid robots");
 	// S4.attack("trash");
-	// S1.guardGate();
-	// S1.beRepaired(10);
-	// S1.takeDamage(100);
+	S6.guardGate();
+	S6.beRepaired(10);
+	S6.takeDamage(100);
 
 	// S5.attack("stupid robots");
 	// S5.takeDamage(90);
