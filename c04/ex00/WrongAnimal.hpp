@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Poly.hpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/29 15:37:48 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/07 12:20:14 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POLY_HPP
-#define POLY_HPP
 
-#include <string>
+
+#ifndef WRONGWrongAnimal_HPP
+# define WRONGWrongAnimal_HPP
+
 #include <iostream>
+#include <string>
 
-class Animal
+class WrongAnimal
 {
-    protected:
-        std::string type;
-    public:
-        ClapTrap(); //A default constructor that initializes the fixed-point number value to 0.
-        ClapTrap(const ClapTrap &f); //A copy constructor
-        ~ClapTrap();
-        ClapTrap(std::string name);
+	protected:
+		std::string _type;
 
-        ClapTrap& operator=(const ClapTrap &copy);
+	public:
+		WrongAnimal();
+		virtual ~WrongAnimal();
+		WrongAnimal(WrongAnimal const &copy);
+		WrongAnimal &operator=(WrongAnimal const &copy);
 
-        void attack(const std::string& target);
-        void takeDamage(unsigned int amount);
-        void beRepaired(unsigned int amount);
+		virtual void makeSound() const;
+		std::string getType() const;
 };
 
 #endif

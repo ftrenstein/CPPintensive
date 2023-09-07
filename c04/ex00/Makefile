@@ -1,8 +1,10 @@
-NAME = Poly
+NAME = Animal
 
 LIST = $(shell find . -name "*.cpp")
 
-HEADER = Poly.hpp
+HEADER = $(shell find . -name "*.hpp")
+#Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp \
+			WrongCat.hpp
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
