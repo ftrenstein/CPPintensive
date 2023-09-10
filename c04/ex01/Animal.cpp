@@ -37,7 +37,7 @@ Animal &Animal::operator=(const Animal& copy)
 
 Animal::~Animal()
 {
-    std::cout << "Destructor called "  << std::endl;
+    std::cout << "Animal: destructor called "  << std::endl;
 }
 
 //__________________________________________________________________________
@@ -56,5 +56,5 @@ std::string Animal::getType(void)const
 
 void Animal::makeSound(void) const
 {
-	std::cout << "I dont know who I am...." << std::endl;
+	std::cout << "Animal: I dont know who I am...." << std::endl;
 }

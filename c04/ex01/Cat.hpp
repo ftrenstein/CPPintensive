@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:28:15 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/07 12:05:02 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/10 12:30:36 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
+
 
 class Cat: public Animal
 {
+	private:
+		Brain *_brain;
 	public:
 		Cat();
 		~Cat();
 		Cat(Cat const &copy);
 		Cat &operator=(Cat const &copy);
 
-		virtual void makeSound() const;
+		void makeSound() const;
 };
 
 #endif

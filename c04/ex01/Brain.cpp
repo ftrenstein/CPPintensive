@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,51 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Brain.hpp"
 
 //______________________________________________________________
-Animal::Animal()
+Brain::Brain()
 {
-    std::cout << "Created a new object with default constructor"  << std::endl;
-    	_type = "type 0";
+    for(int i = 0; i < 100; i++)
+        this->_ideas[i] = "";
+    std::cout << "Brain: Created a new object with default constructor"  << std::endl;
 }
 
 
-Animal::Animal(const Animal& copy) : _type(copy._type)
+Brain::Brain(const Brain& copy)
 {
-    std::cout << "Created a new object named - " << this->_type <<" with copy constructor" << std::endl;
+    std::cout << "Brain: Created a new object named -  with copy constructor" << std::endl;
     *this = copy;
 }
 
-Animal &Animal::operator=(const Animal& copy)
+Brain &Brain::operator=(const Brain& copy)
 {
     if (this == &copy)
         return *this;
-    this->_type = copy._type;
-    std::cout << "Copied Animal " << copy._type <<  " with assignment operator" << std::endl;
+    for(int i = 0; i < 100; i++)
+        this->_ideas[i] = copy._ideas[i];
+    std::cout << "Brain: Copied  with assignment operator" << std::endl;
     return *this;
 }
 
-Animal::~Animal()
+Brain::~Brain()
 {
     std::cout << "Destructor called "  << std::endl;
 }
 
 //__________________________________________________________________________
 
-Animal::Animal(std::string name)
-{
-    _type = name;
-    std::cout << "Created a new Animal with name \'" << this->_type << "\'" << std::endl;
-    return ;
-}
-
-std::string Animal::getType(void)const
-{
-    return(_type);
-}
-
-void Animal::makeSound(void) const
-{
-	std::cout << "I dont know who I am...." << std::endl;
-}

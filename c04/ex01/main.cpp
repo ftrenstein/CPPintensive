@@ -14,34 +14,34 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+
+#define Num_an = 10
 
 int main()
 {
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	delete j;//should not create a leak
 	delete i;
-	delete j;
-	delete meta;
 
-	std::cout << " ----------------------" << std::endl;
-	const WrongAnimal* wrongmeta = new WrongAnimal();
-	const WrongAnimal* cat = new WrongCat();
-	std::cout << cat->getType() << " " << std::endl;
-	cat->makeSound(); //will output the wrong sound!
-	wrongmeta->makeSound();
+	Animal	*animals[Num_an];
 
-	delete cat;
-	delete wrongmeta;
+	std::cout << ">>> CREATING ANIMALS <<<" << std::endl;
+	std::cout << ">> CREATING CATS <<" << std::endl;
+	for (int i = 0; i < Num_an/2, i++)
+	{
+		std::cout << "Animal n°" << i << ":" << std::endl;
+			animals[i] = new Cat();
+		std::cout << "--------------" << std::endl;
+	}
+	std::cout << ">> CREATING DOGS <<" << std::endl;
+	for (; i < NB_ANIMALS; i++)
+	{
+		std::cout << "Animal n°" << i << ":" << std::endl;
+		animals[i] = new Dog();
+		std::cout << "--------------" << std::endl;
+	}
+
 
 	return 0;
 }

@@ -33,7 +33,7 @@ int main()
 	delete j;
 	delete meta;
 
-	std::cout << " ----------------------" << std::endl;
+	std::cout << " -------------------------" << std::endl;
 	const WrongAnimal* wrongmeta = new WrongAnimal();
 	const WrongAnimal* cat = new WrongCat();
 	std::cout << cat->getType() << " " << std::endl;

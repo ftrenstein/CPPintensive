@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/07 12:20:14 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/10 11:57:09 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class WrongAnimal
 		WrongAnimal(WrongAnimal const &copy);
 		WrongAnimal &operator=(WrongAnimal const &copy);
 
-		virtual void makeSound() const;
+		void makeSound() const;
 		std::string getType() const;
 };
 
