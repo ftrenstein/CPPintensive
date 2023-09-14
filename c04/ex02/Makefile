@@ -6,7 +6,7 @@ HEADER = $(shell find . -name "*.hpp")
 #Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp \
 			WrongCat.hpp
 
-FLAGS = -Wall -Wextra -Werror  -std=c++98 
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJSFD = temporary
 

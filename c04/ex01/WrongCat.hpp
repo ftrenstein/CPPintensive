@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:28:15 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/14 11:55:15 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/07 12:19:43 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WrongCat_HPP
+# define WrongCat_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-
-class Cat: public Animal
+class WrongCat: public WrongAnimal
 {
-	private:
-		Brain *_brain;
 	public:
-		Cat();
-		Cat(std::string name);
-		~Cat();
-		Cat(Cat const &copy);
-		Cat &operator=(Cat const &copy);
-		
-		
-		void	printIdeas()const;
+		WrongCat();
+		~WrongCat();
+		WrongCat(WrongCat const &copy);
+		WrongCat &operator=(WrongCat const &copy);
 
 		void makeSound() const;
 };

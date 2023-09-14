@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:28:19 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/29 16:33:51 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:16:12 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Dog::~Dog()
 	std::cout << "Dog: Denstructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &copy)
+Dog::Dog(Dog const &copy) : Animal()
 {
 	std::cout << "Dog: Copy constructor called" << std::endl;
 	this->_type = copy._type;

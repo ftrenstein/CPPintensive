@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:41:38 by renstein          #+#    #+#             */
-/*   Updated: 2023/08/25 00:30:09 by renstein         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:57:39 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+	_hitpoint = 100;
+    _energy = 50;
+    _damage = 20;
     std::cout << "Created a new object with ScavTrap default constructor"  << std::endl;
 }
 

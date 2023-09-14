@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 16:28:15 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/14 11:55:15 by renstein         ###   ########.fr       */
+/*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
+/*   Updated: 2023/09/10 11:57:09 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-
-#include "Animal.hpp"
-#include "Brain.hpp"
 
 
-class Cat: public Animal
+#ifndef WRONGWrongAnimal_HPP
+# define WRONGWrongAnimal_HPP
+
+#include <iostream>
+#include <string>
+
+class WrongAnimal
 {
-	private:
-		Brain *_brain;
+	protected:
+		std::string _type;
+
 	public:
-		Cat();
-		Cat(std::string name);
-		~Cat();
-		Cat(Cat const &copy);
-		Cat &operator=(Cat const &copy);
-		
-		
-		void	printIdeas()const;
+		WrongAnimal();
+		virtual ~WrongAnimal();
+		WrongAnimal(WrongAnimal const &copy);
+		WrongAnimal &operator=(WrongAnimal const &copy);
 
 		void makeSound() const;
+		std::string getType() const;
 };
 
 #endif

@@ -20,17 +20,16 @@
 int main()
 {
 
-	ScavTrap	S1("WALL-E");
-	FragTrap	S2("fEVA");
-	FragTrap	S3("Fcrockroach");
-	FragTrap	S4;
-	ClapTrap	S5("mami");
+	ScavTrap	S1("S_WALL-E");
+	FragTrap	S2("F_EVA");
+	FragTrap	S3("F_crockroach");
+	ClapTrap	S5("Cmami");
 
 
 	S1.attack("stupid robots");
 	S2.attack("FAT");
 	S3.attack("stupid robots");
-	S4.attack("trash");
+
 	S1.guardGate();
 	S1.beRepaired(10);
 	S1.takeDamage(100);
@@ -40,7 +39,6 @@ int main()
 	S5.beRepaired(10);
 
 	S3.highFivesGuys();
-	// S5.guardGate(); //not possible
 
     return 0;
 }

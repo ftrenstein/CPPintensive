@@ -58,3 +58,4 @@ void Animal::makeSound(void) const
 {
 	std::cout << "Animal: I dont know who I am...." << std::endl;
 }
+

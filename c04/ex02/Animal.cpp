@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,51 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Animal.hpp"
 
 //______________________________________________________________
-Brain::Brain()
+Animal::Animal()
 {
-    for(int i = 0; i < 100; i++)
-        this->_ideas[i] = "";
-    std::cout << "Brain: Created a new object with default constructor"  << std::endl;
+    std::cout << "Created a new object with default constructor"  << std::endl;
+    	_type = "type 0";
 }
 
-Brain::Brain(const std::string idea)
-{
-	int		i;
 
-	std::cout << "Brain string constructor called" << std::endl;
-	for (i = 0; i < 100; i++)
-		this->_ideas[i] = idea;
-	return ;
-}
-
-Brain::Brain(const Brain& copy)
+Animal::Animal(const Animal& copy) : _type(copy._type)
 {
-    std::cout << "Brain: Created a new object named -  with copy constructor" << std::endl;
+    std::cout << "Created a new object named - " << this->_type <<" with copy constructor" << std::endl;
     *this = copy;
 }
 
-Brain &Brain::operator=(const Brain& copy)
+Animal &Animal::operator=(const Animal& copy)
 {
     if (this == &copy)
         return *this;
-    for(int i = 0; i < 100; i++)
-        this->_ideas[i] = copy._ideas[i];
-    std::cout << "Brain: Copied  with assignment operator" << std::endl;
+    this->_type = copy._type;
+    std::cout << "Copied Animal " << copy._type <<  " with assignment operator" << std::endl;
     return *this;
 }
 
-Brain::~Brain()
+Animal::~Animal()
 {
-    std::cout << "Brain destructor called "  << std::endl;
+    std::cout << "Animal: destructor called "  << std::endl;
 }
 
 //__________________________________________________________________________
 
-void	Brain::printIdeas()const
+Animal::Animal(std::string name)
 {
-    for (int i = 0; i < 100; i++)
-        std::cout << this->_ideas[i] << std::endl;
+    _type = name;
+    std::cout << "Created a new Animal with name \'" << this->_type << "\'" << std::endl;
+    return ;
 }
+
+std::string Animal::getType(void)const
+{
+    return(_type);
+}
+
+// void Animal::makeSound(void) const
+// {
+// 	std::cout << "Animal: I dont know who I am...." << std::endl;
+// }
+
