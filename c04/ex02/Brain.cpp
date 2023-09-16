@@ -32,7 +32,7 @@ Brain::Brain(const std::string idea)
 
 Brain::Brain(const Brain& copy)
 {
-    std::cout << "Brain: Created a new object named -  with copy constructor" << std::endl;
+    std::cout << "Brain: Created a new object with copy constructor" << std::endl;
     *this = copy;
 }
 
@@ -55,6 +55,6 @@ Brain::~Brain()
 
 void	Brain::printIdeas()const
 {
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 5; i++)
         std::cout << this->_ideas[i] << std::endl;
 }

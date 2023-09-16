@@ -15,14 +15,14 @@
 //______________________________________________________________
 Animal::Animal()
 {
-    std::cout << "Created a new object with default constructor"  << std::endl;
-    	_type = "type 0";
+    std::cout << "Animal: Created a new object with default constructor"  << std::endl;
+    	_type = "type Animal";
 }
 
 
 Animal::Animal(const Animal& copy) : _type(copy._type)
 {
-    std::cout << "Created a new object named - " << this->_type <<" with copy constructor" << std::endl;
+    std::cout << "Animal: Created a new object named - " << this->_type <<" with copy constructor" << std::endl;
     *this = copy;
 }
 

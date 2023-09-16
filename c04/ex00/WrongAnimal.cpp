@@ -20,7 +20,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal: Denstructor called." << std::endl;
+	std::cout << "WrongAnimal: Destructor called." << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &copy)

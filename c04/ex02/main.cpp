@@ -19,14 +19,14 @@
 
 int main()
 {
-	
+
 	// { // Trying to create animals does not compile
 	// 	Animal	animal;
 	// 	Animal	*animal2 = new Animal();
 
 	// 	delete (animal2);
 	// }
-	
+
 	{
 		Animal	*cat = new Cat("sleep");
 		Dog		dog;
@@ -83,15 +83,15 @@ int main()
 	// 		std::cout << "--------------" << std::endl;
 	// 	}
 	// }
-	{
-		Cat		cat("sleep");
-		Cat		copycat;
+	// {
+	// 	Cat		cat("sleep");
+	// 	Cat		copycat;
 
-		copycat = cat;
-		cat.printIdeas();
-		std::cout << "-------------" << std::endl;
-		copycat.printIdeas();
-	}
+	// 	copycat = cat;
+	// 	cat.printIdeas();
+	// 	std::cout << "-------------" << std::endl;
+	// 	copycat.printIdeas();
+	// }
 
 	// {
 	// 	std::cout << "-------------" << std::endl;

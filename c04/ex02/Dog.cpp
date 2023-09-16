@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 16:28:19 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/14 12:29:12 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/16 12:18:43 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Dog::Dog(const std::string idea)
 Dog::~Dog()
 {
 	delete _brain;
-	std::cout << "Dog: Denstructor called" << std::endl;
+	std::cout << "Dog: Destructor called" << std::endl;
 }
 
 Dog::Dog(Dog const &copy) : Animal()
