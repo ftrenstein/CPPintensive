@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/23 20:03:11 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/24 20:00:17 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 #include <string>
 #include <iostream>
+#include "Form.hpp"
+
+
+class Form;
+
 
 class Bureaucrat
 {

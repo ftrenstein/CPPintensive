@@ -16,48 +16,21 @@
 
 int main()
 {
-	try
+	Form * form = new Form("420", 130, 30);
+	std::cout << *form << std::endl;
 	{
-		Bureaucrat a("VVPutin", 1);
-		std::cout << a << std::endl;
-		a.DecremGrade();
-		std::cout << a << std::endl;
-		a.IncremGrade();
-		std::cout << a << std::endl;
-		a.IncremGrade();
-		std::cout << a << std::endl;
-		std::cout << "ALL OK" << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat a("Bob", -1);
-		std::cout << a << std::endl;
-		std::cout << "ALL OK" << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	std::cout << std::endl;
-
-	try
-	{
-		Bureaucrat a("Leyla", 150);
-		std::cout << a << std::endl;
-		a.DecremGrade();
-		std::cout << a << std::endl;
-		std::cout << "ALL OK" << std::endl;
-	}
-	catch (std::exception & ex)
-	{
-		std::cout << ex.what() << std::endl;
+		std::cout << "---------------test01---------------" << std::endl;
+		try
+		{
+			Bureaucrat * bob = new Bureaucrat("Bob", 131);
+			// Form *new_form = form;
+			// bob->signForm(*new_form);
+			delete bob;
+		}
+		catch (std::exception const & e)
+		{
+			std::cerr << "Caught exception: " << e.what() << std::endl;
+		}
 	}
 
 	return 0;
