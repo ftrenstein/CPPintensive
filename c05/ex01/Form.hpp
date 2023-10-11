@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 18:26:30 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/24 20:03:38 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:54:38 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Form
         int         getGradeSign(void)const;
         int         getGradeExec(void)const;
         bool        getSigned()const;
-        void        beSigned(Bureaucrat const &bur);
+        void        beSigned(const Bureaucrat  &bur);
 
         class GradeTooHighException : public std::exception
         {

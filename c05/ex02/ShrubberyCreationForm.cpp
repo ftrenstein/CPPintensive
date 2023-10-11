@@ -1,44 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 18:26:53 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/29 14:48:35 by renstein         ###   ########.fr       */
+/*   Created: 2023/09/29 15:35:04 by renstein          #+#    #+#             */
+/*   Updated: 2023/09/29 15:39:10 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
 
-//______________________________________________________________
-// Form::Form() {}
-
-
-Form::Form(const Form& copy) : _name(copy._name), _gradeSign(copy._gradeSign), _gradeExec(copy._gradeExec)
-{}
-
-
-Form &Form::operator=(const Form& copy)
-{
-    if (this != &copy)
-        this->_sign = copy.getSigned();
-    return *this;
-}
-
-Form::~Form() {}
-
-
-//__________________________________________________________________________
-
-Form::Form(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(false), _gradeSign(rangeSign), _gradeExec(rangeExec)
-{
-    if (rangeSign > 150 || rangeExec > 150)
-            throw GradeTooLowException();
-    if (rangeSign < 1 || rangeExec < 1)
-            throw GradeTooHighException();
-}
 
 std::string Form::getName(void)const
 {

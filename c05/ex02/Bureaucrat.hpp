@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/29 14:14:03 by renstein         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:57:40 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 #include <string>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
-class Form;
+class AForm;
 
 
 class Bureaucrat
@@ -40,7 +40,7 @@ class Bureaucrat
         void IncremGrade();
         void DecremGrade();
 
-        void    signForm(Form &form);
+        void    signForm(AForm & Aform);
 
 
         class GradeTooHighException : public std::exception
