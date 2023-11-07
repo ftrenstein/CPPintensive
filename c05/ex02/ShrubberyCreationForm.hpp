@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:35:07 by renstein          #+#    #+#             */
-/*   Updated: 2023/10/11 18:21:40 by renstein         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:43:37 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,19 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
-
-#include <string>
-#include <iostream>
-
-
+class AForm;
 
 class ShrubberyCreationForm : public AForm
 {
-
-    private:
-        std::string  _target;
-        ShrubberyCreationForm(void);
-
     public:
-       ShrubberyCreationForm(std::string target);
-       ShrubberyCreationForm(const ShrubberyCreationForm &f);
-       ShrubberyCreationForm& operator=(const ShrubberyCreationForm &copy);
+       ShrubberyCreationForm(std::string const & target);
+       ShrubberyCreationForm(const ShrubberyCreationForm &other);
         ~ShrubberyCreationForm();
+
+       ShrubberyCreationForm& operator=(const ShrubberyCreationForm &copy);
 
         std::string getTarget(void)const;
 
-        void    execute(Bureaucrat const & executor)const;
 
         class WriteToFileException : public std::exception
         {
@@ -43,9 +34,11 @@ class ShrubberyCreationForm : public AForm
                 const char * what() const throw();
         };
 
+        void    execute(Bureaucrat const & executor)const;
+    private:
 
+        ShrubberyCreationForm(void);
+        std::string  _target;
 };
-
-std::ostream & operator<<(std::ostream & os,ShrubberyCreationForm const &ShrubberyCreationForma);
 
 #endif

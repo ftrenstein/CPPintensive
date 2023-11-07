@@ -12,65 +12,39 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
+# define GRADE 1
 
-int main()
+int main(void)
 {
-	Form * form = new Form("420", 130, 30);
-	std::cout << *form << std::endl;
+	Bureaucrat * bobby = new Bureaucrat("Bobby", GRADE);
 	{
 		std::cout << "---------------test01---------------" << std::endl;
-		try
-		{
-			Bureaucrat * bob = new Bureaucrat("Bob", 131);
-			Form *new_form = form;
-			bob->signForm(*new_form);
-			delete bob;
-		}
-		catch (std::exception const & e)
-		{
-			std::cerr << "Caught exception: " << e.what() << std::endl;
-		}
+
+		ShrubberyCreationForm form("Garden");
+
+		bobby->signForm(form);
+		bobby->executeForm(form);
 	}
-		{
+	{
 		std::cout << "---------------test02---------------" << std::endl;
-		try
-		{
-			Bureaucrat * josh = new Bureaucrat("Josh", 129);
-			Form *new_form = form;
-			josh->signForm(*new_form);
-			delete josh;
-		}
-		catch (std::exception const & e)
-		{
-			std::cerr << "Caught exception: " << e.what() << std::endl;
-		}
+
+		RobotomyRequestForm form("Scanner");
+
+		bobby->signForm(form);
+		bobby->executeForm(form);
 	}
-	delete form;
 	{
 		std::cout << "---------------test03---------------" << std::endl;
-		try
-		{
-			Form * f = new Form("F-222a", 300, 10);
-			delete f;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << "Caught exception: " << e.what() << std::endl;
-		}
-	}
-	{
-		std::cout << "---------------test04---------------" << std::endl;
-		try
-		{
-			Form * f = new Form("F-222a", 0, -100);
-			delete f;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << "Caught exception: " << e.what() << std::endl;
-		}
-	}
 
-	return 0;
+		PresidentialPardonForm form("Navalny");
+
+		bobby->signForm(form);
+		bobby->executeForm(form);
+	}
+	delete bobby;
+	return (0);
 }

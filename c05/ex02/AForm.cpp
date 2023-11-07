@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*   AAForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,26 +13,26 @@
 #include "AForm.hpp"
 
 //______________________________________________________________
-// Form::Form() {}
+// AForm::AForm() {}
 
 
-Form::Form(const Form& copy) : _name(copy._name), _gradeSign(copy._gradeSign), _gradeExec(copy._gradeExec)
+AForm::AForm(const AForm& copy) : _name(copy._name), _gradeSign(copy._gradeSign), _gradeToExecute(copy._gradeToExecute)
 {}
 
 
-Form &Form::operator=(const Form& copy)
+AForm &AForm::operator=(const AForm& copy)
 {
     if (this != &copy)
         this->_sign = copy.getSigned();
     return *this;
 }
 
-Form::~Form() {}
+AForm::~AForm() {}
 
 
 //__________________________________________________________________________
 
-Form::Form(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(false), _gradeSign(rangeSign), _gradeExec(rangeExec)
+AForm::AForm(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(false), _gradeSign(rangeSign), _gradeExec(rangeExec)
 {
     if (rangeSign > 150 || rangeExec > 150)
             throw GradeTooLowException();
@@ -40,50 +40,64 @@ Form::Form(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(
             throw GradeTooHighException();
 }
 
-std::string Form::getName(void)const
+std::string AForm::getName(void)const
 {
     return(this->_name);
 }
 
-int Form::getGradeSign(void)const
+int AForm::getGradeSign(void)const
 {
     return(this->_gradeSign);
 }
 
-int Form::getGradeExec(void)const
+int AForm::getGradeExec(void)const
 {
-    return(this->_gradeExec);
+    return(this->_gradeToExecute);
 }
 
-const char  * Form::GradeTooHighException::what() const throw()
+const char  * AForm::GradeTooHighException::what() const throw()
 {
-    return ("The Grade Form is too high!");
+    return ("The Grade AForm is too high!");
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
-	return ("The Grade Form is too low!");
+	return ("The Grade AForm is too low!");
 }
 
-void    Form::beSigned(const Bureaucrat& bur)
+const char *AForm::FormNotSignedException::what() const throw()
+{
+	return ("The AForm  not signed at all!");
+}
+
+void    AForm::beSigned(const Bureaucrat& bur)
 {
     if (bur.getGrade() <= _gradeSign)
         {
             if (_sign == true)
-                throw "The Form already signed!";
+                throw "The AForm already signed!";
             _sign = true;
         }
     else
         throw GradeTooLowException();
 }
 
-bool    Form::getSigned()const
+bool    AForm::getSigned()const
 {
     return(this->_sign);
 }
 
-std::ostream& operator<< (std::ostream &os, Form const  & forma)
+
+void AForm::checkRequirementsToExecute(Bureaucrat const & executor) const
 {
-	os << "Form  <" << forma.getName() << ">, status: "<< (forma.getSigned() ? "Signed" : "Unsigned") << ", because \ngrade for signed  <" << forma.getGradeSign() << ">" " grade for exec form <" << forma.getGradeExec() << ">";
+	if (this->getSigned() == false)
+		throw FormNotSignedException();
+	else if (executor.getGrade() > this->_gradeToExecute)
+		throw GradeTooLowException();
+}
+
+std::ostream& operator<< (std::ostream &os, AForm const  & AForma)
+{
+	os << "AForm  <" << AForma.getName() << ">, status: "<< (AForma.getSigned() ? "Signed" : "Unsigned") << ", because \ngrade for signed  <" << AForma.getGradeSign() << ">" " grade for exec AForm <" << AForma.getGradeExec() << ">";
 	return (os);
 }
