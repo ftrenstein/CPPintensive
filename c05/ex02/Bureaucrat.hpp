@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 17:28:32 by renstein          #+#    #+#             */
-/*   Updated: 2023/09/29 15:57:40 by renstein         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:48:56 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ class Bureaucrat
         void DecremGrade();
 
         void    signForm(AForm & Aform);
+        void    executeForm(AForm const & form);
 
 
         class GradeTooHighException : public std::exception
@@ -53,6 +54,8 @@ class Bureaucrat
             public:
                 const char * what() const throw();
         };
+
+
 
 };
 

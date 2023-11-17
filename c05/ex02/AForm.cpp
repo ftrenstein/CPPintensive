@@ -32,7 +32,7 @@ AForm::~AForm() {}
 
 //__________________________________________________________________________
 
-AForm::AForm(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(false), _gradeSign(rangeSign), _gradeExec(rangeExec)
+AForm::AForm(std::string name, int rangeSign, int rangeExec) : _name(name), _sign(false), _gradeSign(rangeSign), _gradeToExecute(rangeExec)
 {
     if (rangeSign > 150 || rangeExec > 150)
             throw GradeTooLowException();
@@ -70,6 +70,11 @@ const char *AForm::FormNotSignedException::what() const throw()
 	return ("The AForm  not signed at all!");
 }
 
+const char *AForm::GradeBurTooLowException::what() const throw()
+{
+	return ("The Grade Bureaucrat too low!");
+}
+
 void    AForm::beSigned(const Bureaucrat& bur)
 {
     if (bur.getGrade() <= _gradeSign)
@@ -82,18 +87,17 @@ void    AForm::beSigned(const Bureaucrat& bur)
         throw GradeTooLowException();
 }
 
-bool    AForm::getSigned()const
-{
-    return(this->_sign);
-}
-
-
-void AForm::checkRequirementsToExecute(Bureaucrat const & executor) const
+void    AForm::checkRequirementsToExecute(const Bureaucrat& executor) const
 {
 	if (this->getSigned() == false)
 		throw FormNotSignedException();
 	else if (executor.getGrade() > this->_gradeToExecute)
-		throw GradeTooLowException();
+		throw GradeBurTooLowException();
+}
+
+bool    AForm::getSigned()const
+{
+    return(this->_sign);
 }
 
 std::ostream& operator<< (std::ostream &os, AForm const  & AForma)

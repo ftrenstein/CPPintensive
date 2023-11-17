@@ -24,7 +24,7 @@ int main(void)
 	{
 		std::cout << "---------------test01---------------" << std::endl;
 
-		ShrubberyCreationForm form("Garden");
+		ShrubberyCreationForm form("Three");
 
 		bobby->signForm(form);
 		bobby->executeForm(form);

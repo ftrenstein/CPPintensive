@@ -6,7 +6,7 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:35:04 by renstein          #+#    #+#             */
-/*   Updated: 2023/11/07 11:55:30 by renstein         ###   ########.fr       */
+/*   Updated: 2023/11/17 17:55:20 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & other
     : AForm(other), _target(other.getTarget()) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
-
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs)
 {
@@ -51,7 +50,6 @@ const char * ShrubberyCreationForm::WriteToFileException::what() const throw()
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-
 	checkRequirementsToExecute(executor);
 	std::string outputFile = this->_target + "_shrubbery";
 	std::ofstream ofs(outputFile.c_str());
