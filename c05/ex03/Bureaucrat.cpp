@@ -73,7 +73,39 @@ void Bureaucrat::DecremGrade()
 {
     this->_grade++;
     if(this->_grade > 150)
-        throw GradeTooLowException();
+        throw GradeTooHighException();
+}
+
+
+void    Bureaucrat::signForm(AForm &Aform)
+{
+    try
+    {
+        Aform.beSigned(*this);
+        std::cout << *this << " signed " << Aform << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << *this << " couldn’t sign " << Aform
+			<< " because " << e.what() << std::endl;
+    }
+
+}
+
+void    Bureaucrat::executeForm(AForm const & form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << *this << " executed " << form
+                << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << *this << " couldn't execute " << form
+         << " because " << e.what() << '\n';
+    }
+
 }
 
 std::ostream& operator<< (std::ostream &os, Bureaucrat const  &bur)

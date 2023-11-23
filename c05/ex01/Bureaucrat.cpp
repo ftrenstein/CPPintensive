@@ -73,7 +73,7 @@ void Bureaucrat::DecremGrade()
 {
     this->_grade++;
     if(this->_grade > 150)
-        throw GradeTooHighException();
+        throw GradeTooLowException();
 }
 
 

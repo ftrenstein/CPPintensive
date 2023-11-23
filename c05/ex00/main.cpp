@@ -16,9 +16,11 @@
 
 int main()
 {
+	std::cout << "---------------test01---------------" << std::endl;
+
 	try
 	{
-		Bureaucrat a("VVPutin", 1);
+		Bureaucrat a("Cat", 1);
 		std::cout << a << std::endl;
 		a.DecremGrade();
 		std::cout << a << std::endl;
@@ -32,11 +34,12 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	std::cout << std::endl;
+	std::cout << "---------------test02---------------" << std::endl;
+
 
 	try
 	{
-		Bureaucrat a("Bob", -1);
+		Bureaucrat a("Dog", -1);
 		std::cout << a << std::endl;
 		std::cout << "ALL OK" << std::endl;
 	}
@@ -45,11 +48,12 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << std::endl;
+		std::cout << "---------------test03---------------" << std::endl;
+
 
 	try
 	{
-		Bureaucrat a("Leyla", 150);
+		Bureaucrat a("Chicken", 150);
 		std::cout << a << std::endl;
 		a.DecremGrade();
 		std::cout << a << std::endl;

@@ -22,7 +22,7 @@ int main()
 		std::cout << "---------------test01---------------" << std::endl;
 		try
 		{
-			Bureaucrat * bob = new Bureaucrat("Bob", 131);
+			Bureaucrat * bob = new Bureaucrat("Dog", 131);
 			Form *new_form = form;
 			bob->signForm(*new_form);
 			delete bob;
@@ -36,7 +36,7 @@ int main()
 		std::cout << "---------------test02---------------" << std::endl;
 		try
 		{
-			Bureaucrat * josh = new Bureaucrat("Josh", 129);
+			Bureaucrat * josh = new Bureaucrat("Cat", 129);
 			Form *new_form = form;
 			josh->signForm(*new_form);
 			delete josh;
