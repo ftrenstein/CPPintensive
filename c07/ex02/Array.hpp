@@ -6,29 +6,33 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:19:57 by renstein          #+#    #+#             */
-/*   Updated: 2023/11/25 18:20:13 by renstein         ###   ########.fr       */
+/*   Updated: 2023/11/28 20:02:15 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
-
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <iostream>
-#include <exception>
 
-template <typename T>
-class Array {
-private:
-    T *elements;
-    unsigned int arraySize;
+template<class T>
+class Array
+{
+	public:
+		Array(void);
+		Array(unsigned int n);
+		Array(Array<T> const & other);
+		~Array(void);
 
-public:
-    Array() : elements(nullptr), arraySize(0){}
+		Array<T> & operator=(Array<T> const & rhs);
+		T & operator[](unsigned int const index) const;
 
-    Array(unsigned int n): elements()
-}
+		unsigned int   size(void) const;
+	private:
+		T * arr;
+		unsigned int _n;
+};
 
-
+# include "Array.tpp"
 
 #endif

@@ -6,28 +6,40 @@
 /*   By: renstein <renstein@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:04:24 by renstein          #+#    #+#             */
-/*   Updated: 2023/11/25 18:09:27 by renstein         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:57:23 by renstein         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "iter.hpp"
-
-
-template <typename T>
-void printElement(const T& element) {
-    std::cout << element << "\n";
-}
+#include "Array.hpp"
+#include "Array.tpp"
 
 int main(void)
 {
-	int arr[4] = {1, 2, 3, 4};
-	iter(arr, 4, printElement);
+	std::cout << "<----------empty test--------->" << std::endl;
+	Array<int> empty;
+	std::cout << empty.size() << std::endl;
 
-	std::cout << std::endl;
-
-	std::string seasons[4] = {"Winter", "Spring", "Summer", "Autumn"};
-	iter(seasons, 4, printElement);
-
-	return (0);
+	std::cout << "<----------copy test---------->" << std::endl;
+	Array<int> original(2);
+	for (int i = 0; i < 2; i++)
+	{
+		original[i] = i + 1;
+		std::cout << "original - "<< original[i] << std::endl;
+	}
+	Array<int>copy(original);
+	for (int i = 0; i < 2; i++)
+		std::cout << "copy - "<< copy[i] << std::endl;
+	std::cout << "<---------access test--------->" << std::endl;
+	try
+	{
+		const Array<float> f(4);
+		f[0] = 42.42f;
+		for (int i = 0; i < 5; i++)
+			std::cout << "Index: " << i << "; Value: " << f[i] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return(0);
 }
