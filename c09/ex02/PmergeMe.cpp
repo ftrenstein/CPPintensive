@@ -12,11 +12,11 @@ PmergeMe::PmergeMe(int ac, char **av) : _size(ac - 1), _sorted(false)
 	_printBeforeAfter();
 
 	double tBegin = _getTime();
-	_mergeInsertSort(_vector);
+	_FordJohnsonSort(_vector);
 	_deltaTimeVector = _deltaTime(tBegin);
 
 	tBegin = _getTime();
-	_mergeInsertSort(_deque);
+	_FordJohnsonSort(_deque);
 	_deltaTimeDeque = _deltaTime(tBegin);
 
 	_sorted = true;
@@ -125,7 +125,7 @@ void PmergeMe::_printTime(std::string vectorDeque) const
 }
 
 template <typename T>
-void PmergeMe::_mergeInsertSort(T & container)
+void PmergeMe::_FordJohnsonSort(T & container)
 {
 	const int limit = 16;
 	const int size = container.size();
@@ -147,8 +147,8 @@ void PmergeMe::_mergeInsertSort(T & container)
 	typename T::iterator middle = container.begin() + size / 2;
 	T left(container.begin(), middle);
 	T right(middle, container.end());
-	_mergeInsertSort(left);
-	_mergeInsertSort(right);
+	_FordJohnsonSort(left);
+	_FordJohnsonSort(right);
 	typename T::iterator i = left.begin();
 	typename T::iterator j = right.begin();
 	typename T::iterator k = container.begin();

@@ -56,7 +56,7 @@ class PmergeMe
 		void				_printTime(std::string vectorDeque) const;
 
 		template <typename T>
-		void				_mergeInsertSort(T & container);
+		void				_FordJohnsonSort(T & container);
 
 		double				_getTime(void);
 		double				_deltaTime(long long time);
